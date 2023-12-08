@@ -115,10 +115,6 @@ def main():
     if imported_data is not None:
         st.title("Data Nilai Mahasiswa")
 
-        # Menampilkan data yang diimpor
-        st.subheader("Data yang diimpor:")
-        st.write(imported_data)
-
         # Mengimpor data ke dalam BST
         for index, row in imported_data.iterrows():
             student_id = row[student_id_column]
@@ -183,7 +179,7 @@ def main():
             st.write(f"Data Mahasiswa ID {selected_student_id}:")
             for data in selected_data:
                 st.write(
-                    f"Nama Mahasiswa : {grade.student.name}  \n",
+                    f"Nama Mahasiswa : {data.student.name}  \n",
                     f"Kode Mata Kuliah: {data.course.course_code}  \n Nama Mata Kuliah: {data.course.course_name}  \n "
                     f"Nilai: {data.score}  \n"
                 )
